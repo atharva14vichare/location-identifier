@@ -1,0 +1,36 @@
+
+.card {
+  display: flex; /* Enable flexbox */
+  align-items: center; /* Center items vertically */
+  width: 900px; /* Adjust the width as needed */
+  height: 150px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 25px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.card-image {
+  width: 150px;
+  height: 150px; /* Adjust the height as needed */
+  object-fit: cover; /* This will cover the area without stretching the image */
+  border-radius: 4px; /* Optional: rounds the corners of the image */
+  order: 2; /* Ensure the image is placed on the right */
+}
+
+.card-content {
+  flex: 1; /* Allow content to expand and fill available space */
+  padding: 16px;
+  order: 1; /* Ensure content is placed on the left */
+}
+
+.card-title {
+  margin: 0 0 8px 0;
+  font-size: 1.25rem;
+}
+
+.card-description {
+  font-size: 1rem;
+  color: #333;
+}
