@@ -29,7 +29,7 @@ export default App;
 
 import React from 'react';
 import './App.css';
-import Card from './Card'; 
+import Card from './Card'; // Make sure to import the Card component
 
 function App() {
 
@@ -38,19 +38,20 @@ function App() {
     {
       title: "Indian Room",
       description: "Less Crowded. No Sensors present.",
-      imageUrl: `${process.env.PUBLIC_URL}/photos/indian_room.png`, 
+      imageUrl: `${process.env.PUBLIC_URL}/photos/indian_room.png`, // Replace with your image path
     },
     {
       title: "Chinese Room",
       description: "No Sensors present.",
-      imageUrl: `${process.env.PUBLIC_URL}/photos/chinese_room.png`, 
+      imageUrl: `${process.env.PUBLIC_URL}/photos/chinese_room.png`, // Replace with your image path
     },
     {
       title: "English Room",
       description: "No Sensors present.",
-      imageUrl: `${process.env.PUBLIC_URL}/photos/english_room.png`, 
+      imageUrl: `${process.env.PUBLIC_URL}/photos/english_room.png`, // Replace with your image path
     },
     
+    // Add more room data as needed
   ];
 
 
@@ -182,7 +183,7 @@ function App() {
 export default App;
 
 /*
-Here's a preliminary list of features to consider for the filters:
+ere's a preliminary list of features to consider for the filters:
 Occupancy
 empty, 1, 2, 3, 4+
 Whiteboard
