@@ -1,0 +1,51 @@
+.room-container {
+    position: relative; /* Set the container to position relative */
+    padding: 20px;
+    min-height: 100vh; 
+  }
+  
+  .room-image {
+    position: absolute; /* Position the image absolutely */
+    top: 0; /* Align it to the top */
+    right: 0; /* Align it to the right */
+    width: 300px; /* Specify the width you want */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+  }
+  
+  /* Content styling */
+  .room-content {
+    /* Add padding to ensure content does not overlap the image */
+    padding-right: 320px; /* Slightly more than image width to allow for spacing */
+  }
+  /* Add other styles for title, subtitle, timings, and description as before */
+  
+
+  .chart-container {
+    border: 6px solid black; /* Adjust border as needed */
+    padding: 10px; /* Optional: if you want some space between the border and the chart */
+    box-sizing: border-box;
+    width: 80%; /* Or any other width */
+    max-width: 600px; /* Maximum size */
+    margin: auto; /* Center the chart */
+    position: absolute; /* Position the chart container absolutely */
+    bottom: 0; /* Align to the bottom */
+    left: 0; /* Align to the right */
+
+  }
+  
+  /* Responsive sizing for the chart */
+  @media (max-width: 768px) {
+    .chart-container {
+      width: 95%;
+      max-width: 400px;
+    }
+  }
+  
+  /* If you want to keep the aspect ratio of the chart */
+  #myChart {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 2 / 1; /* Adjust the ratio as needed */
+  }

@@ -1,11 +1,10 @@
 
-
 import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './RoomPage.css';
 import Chart from 'chart.js/auto';
 
-const ChineseRoomPage = () => {
+const Patiolawn = () => {
   const chartRef = useRef(null); 
   const chartInstance = useRef(null); 
 
@@ -59,12 +58,12 @@ const ChineseRoomPage = () => {
   return (
     <div className="room-container">
       <div className="room-content">
-        <h1 className="room-title">CHINESE ROOM</h1>
-        <h2 className="room-subtitle">First Floor Cathedral of Learning</h2>
-        <p className="room-timings">TIMINGS: 9AM - 9PM</p>
-        <p className="room-description">No sensors present.<br />No cameras present.</p>
+        <h1 className="room-title">PATIO AND LAWN</h1>
+        <h2 className="room-subtitle">Outside of William Pitt Union</h2>
+        <p className="room-timings">TIMINGS: 9AM - 8PM</p>
+        <p className="room-description">No sensors present.</p>
         <p className="indian-room-description">
-        The Chinese Room, or China Memorial Room, as it was originally known in the 1930s is an amalgamation of 18th century architecture one might find in the Forbidden City. Ceiling panels show dragons and the pearl of wisdom, and phoenixes fly with the peony (motan) flower.
+        The Patio and Lawn are located outside on the Bigelow Boulevard side of the William Pitt Union, facing the Cathedral of Learning. This space can be used during warmer weather for any event - from an opening or closing receptions to a conference or in conjunction with the Lower Lounge.   
         </p>
         {/* Include canvas element for chart */}
         <div className="chart-container">
@@ -73,12 +72,12 @@ const ChineseRoomPage = () => {
       </div>
       <img
         className="room-image"
-        src={`${process.env.PUBLIC_URL}/photos/chinese_room.png`} 
-        alt="Chinese Room"
+        src={`${process.env.PUBLIC_URL}/photos/patiolawn.png`} 
+        alt="Indian Room"
       />
     
     </div>
   );
 };
 
-export default ChineseRoomPage;
+export default Patiolawn;

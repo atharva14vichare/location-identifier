@@ -1,11 +1,10 @@
 
-
 import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './RoomPage.css';
 import Chart from 'chart.js/auto';
 
-const ChineseRoomPage = () => {
+const Lowerlounge = () => {
   const chartRef = useRef(null); 
   const chartInstance = useRef(null); 
 
@@ -59,12 +58,12 @@ const ChineseRoomPage = () => {
   return (
     <div className="room-container">
       <div className="room-content">
-        <h1 className="room-title">CHINESE ROOM</h1>
-        <h2 className="room-subtitle">First Floor Cathedral of Learning</h2>
+        <h1 className="room-title">PATIO AND LAWN</h1>
+        <h2 className="room-subtitle">Ground Floor William Pitt Union</h2>
         <p className="room-timings">TIMINGS: 9AM - 9PM</p>
-        <p className="room-description">No sensors present.<br />No cameras present.</p>
+        <p className="room-description">Less crowded.</p>
         <p className="indian-room-description">
-        The Chinese Room, or China Memorial Room, as it was originally known in the 1930s is an amalgamation of 18th century architecture one might find in the Forbidden City. Ceiling panels show dragons and the pearl of wisdom, and phoenixes fly with the peony (motan) flower.
+        The Lower Lounge is located on the main floor of the William Pitt Union. Its many windows look out onto the patio and lawn facing the Cathedral of Learning. The Lower Lounge also features a split-level entry and can accommodate medium-sized lectures, receptions, and meetings.  
         </p>
         {/* Include canvas element for chart */}
         <div className="chart-container">
@@ -73,12 +72,12 @@ const ChineseRoomPage = () => {
       </div>
       <img
         className="room-image"
-        src={`${process.env.PUBLIC_URL}/photos/chinese_room.png`} 
-        alt="Chinese Room"
+        src={`${process.env.PUBLIC_URL}/photos/lowerlounge.png`} 
+        alt="lower lounge"
       />
     
     </div>
   );
 };
 
-export default ChineseRoomPage;
+export default Lowerlounge;

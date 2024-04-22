@@ -27,42 +27,160 @@ function App() {
 export default App;
 */
 
-import React from 'react';
+import React, { useState } from 'react'; 
 import './App.css';
-import Card from './Card'; // Make sure to import the Card component
+import Card from './Card'; 
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import IndianRoomPage from './IndianRoomPage'; 
+import EnglishRoomPage from './EnglishRoomPage'; 
+import ChineseRoomPage from './ChineseRoomPage'; 
+import Patiolawn from './Patiolawn';
+import Lowerlounge from './Lowerlounge';
+import Ballroom from './Ballroom';
+import HL317 from './HL317';
+import HL210 from './HL210';
+import HL412 from './HL412';
 
 function App() {
 
-
+/*
   const rooms = [
     {
       title: "Indian Room",
-      description: "Less Crowded. No Sensors present.",
+      //description: "Less Crowded. No Sensors present.",
       imageUrl: `${process.env.PUBLIC_URL}/photos/indian_room.png`, // Replace with your image path
+      linkUrl: "/indian-room",
     },
     {
       title: "Chinese Room",
-      description: "No Sensors present.",
+      //description: "No Sensors present.",
       imageUrl: `${process.env.PUBLIC_URL}/photos/chinese_room.png`, // Replace with your image path
+      linkUrl: "/chinese-room",
     },
     {
       title: "English Room",
-      description: "No Sensors present.",
+      //description: "No Sensors present.",
       imageUrl: `${process.env.PUBLIC_URL}/photos/english_room.png`, // Replace with your image path
+      linkUrl: "/english-room",
+    },
+    {
+      title: "Patio and Lawn",
+      //description: "No Sensors present.",
+      imageUrl: `${process.env.PUBLIC_URL}/photos/patiolawn.png`, // Replace with your image path
+      linkUrl: "/patio-lawn",
+    },
+    {
+      title: "Lower Lounge",
+      //description: "No Sensors present.",
+      imageUrl: `${process.env.PUBLIC_URL}/photos/lowerlounge.png`, 
+      linkUrl: "/lower-lounge",
+    },
+    {
+      title: "Ballroom",
+      //description: "No Sensors present.",
+      imageUrl: `${process.env.PUBLIC_URL}/photos/ballroom.png`, 
+      linkUrl: "/ballroom",
+    },
+    {
+      title: "317 HL",
+      //description: "No Sensors present.",
+      imageUrl: `${process.env.PUBLIC_URL}/photos/hillman_3.png`, 
+      linkUrl: "/317-hl",
+    },
+    {
+      title: "210 HL",
+      //description: "No Sensors present.",
+      imageUrl: `${process.env.PUBLIC_URL}/photos/hillman_2.png`, 
+      linkUrl: "/210-hl",
+    },
+    {
+      title: "412 HL",
+      //description: "No Sensors present.",
+      imageUrl: `${process.env.PUBLIC_URL}/photos/hillman_public.png`, 
+      linkUrl: "/412-hl",
     },
     
     // Add more room data as needed
+  ];*/
+
+
+  const [selectedBuildings, setSelectedBuildings] = useState(new Set());
+  const [displayedRooms, setDisplayedRooms] = useState([]);
+
+  const rooms = [
+    { title: "Indian Room", imageUrl: `${process.env.PUBLIC_URL}/photos/indian_room.png`, linkUrl: "/indian-room", building: 'Cathy' },
+    { title: "Chinese Room", imageUrl: `${process.env.PUBLIC_URL}/photos/chinese_room.png`, linkUrl: "/chinese-room", building: 'Cathy' },
+    { title: "English Room", imageUrl: `${process.env.PUBLIC_URL}/photos/english_room.png`, linkUrl: "/english-room", building: 'Cathy' },
+    { title: "Patio and Lawn", imageUrl: `${process.env.PUBLIC_URL}/photos/patiolawn.png`, linkUrl: "/patio-lawn", building: 'WPU' },
+    { title: "Lower Lounge", imageUrl: `${process.env.PUBLIC_URL}/photos/lowerlounge.png`, linkUrl: "/lower-lounge", building: 'WPU' },
+    { title: "Ballroom", imageUrl: `${process.env.PUBLIC_URL}/photos/ballroom.png`, linkUrl: "/ballroom", building: 'WPU' },
+    { title: "317 HL", imageUrl: `${process.env.PUBLIC_URL}/photos/hillman_3.png`, linkUrl: "/317-hl", building: 'Hillman Library' },
+    { title: "210 HL", imageUrl: `${process.env.PUBLIC_URL}/photos/hillman_2.png`, linkUrl: "/210-hl", building: 'Hillman Library' },
+    { title: "412 HL", imageUrl: `${process.env.PUBLIC_URL}/photos/hillman_public.png`, linkUrl: "/412-hl", building: 'Hillman Library' },
   ];
+  
+  const handleBuildingChange = (event) => {
+    const building = event.target.name;
+    const isChecked = event.target.checked;
+    setSelectedBuildings(prev => {
+      const updated = new Set(prev);
+      if (isChecked) {
+        updated.add(building);
+      } else {
+        updated.delete(building);
+      }
+      return updated;
+    });
+  };
+
+  const handleSubmit = () => {
+    const filteredRooms = rooms.filter(room => selectedBuildings.has(room.building));
+    setDisplayedRooms(filteredRooms);
+  };
+
+
+
+
 
 
   return (
-    <div className="App">
+    
+      <div className="App">
       <header className="App-header">
         <h1>LOCATION IDENTIFIER</h1>
       </header>
       <div className="App-body">
         <aside className="App-sidebar">
           <div className="Sidebar-section">
+
+
+
+
+          <h2>LOCATIONS</h2>
+            <div>
+              <label htmlFor="cathy">
+                <input type="checkbox" id="cathy" name="Cathy" onChange={handleBuildingChange} />
+                Cathy
+              </label>
+              <label htmlFor="wpu">
+                <input type="checkbox" id="wpu" name="WPU" onChange={handleBuildingChange} />
+                WPU
+              </label>
+              <label htmlFor="hillman-library">
+                <input type="checkbox" id="hillman-library" name="Hillman Library" onChange={handleBuildingChange} />
+                Hillman Library
+              </label>
+              <label htmlFor="mervis-hall">
+              <input type="checkbox" id="mervis-hall" name="occupancy" value="mervis-hall" />
+              Mervis Hall
+            </label>
+            <label htmlFor="benedum-hall">
+              <input type="checkbox" id="benedum-hall" name="occupancy" value="benedum-hall" />
+              Benedum Hall
+            </label>
+
+            
             <h2>OCCUPANCY</h2>
             <label htmlFor="empty">
               <input type="checkbox" id="empty" name="occupancy" value="empty" />
@@ -134,49 +252,39 @@ function App() {
             </label>
 
 
-            <h2>LOCATIONS</h2>
-            <label htmlFor="cathy">
-              <input type="checkbox" id="cathy" name="occupancy" value="cathy" />
-              Cathy
-            </label>
-            <label htmlFor="wpu">
-              <input type="checkbox" id="wpu" name="occupancy" value="wpu" />
-              WPU
-            </label>
-            <label htmlFor="hillman-library">
-              <input type="checkbox" id="hillman-library" name="occupancy" value="hillman-library" />
-              Hillman Library
-            </label>
-            <label htmlFor="mervis-hall">
-              <input type="checkbox" id="mervis-hall" name="occupancy" value="mervis-hall" />
-              Mervis Hall
-            </label>
-            <label htmlFor="benedum-hall">
-              <input type="checkbox" id="benedum-hall" name="occupancy" value="benedum-hall" />
-              Benedum Hall
-            </label>
-
-            <button type="submit">Submit</button>
+            
+            </div>
+            <button onClick={handleSubmit}>Submit</button>
           </div>
-          {/* You can add more sidebar sections here */}
-        </aside>
-        <main className="App-main">
-          {/* Room cards will be displayed here */}
-          {rooms.map((room, index) => (
-            <Card
-              key={index}
-              title={room.title}
-              description={room.description}
-              imageUrl={room.imageUrl}
-            />
-          ))}
-        </main>
+          </aside>
+          <main className="App-main">
+            {/* Main content will change based on the route */}
+            <Routes>
+              <Route path="/" element={
+              <div>
+                {displayedRooms.length > 0 ? displayedRooms.map((room, index) => (
+                  <Card
+                    key={index}
+                    title={room.title}
+                    imageUrl={room.imageUrl}
+                    linkUrl={room.linkUrl}
+                  />
+                )) : <p>No rooms available for the selected building.</p>}
+              </div>
+            } />
+              <Route path="/indian-room" element={<IndianRoomPage />} />
+              <Route path="/english-room" element={<EnglishRoomPage />} />
+              <Route path="/chinese-room" element={<ChineseRoomPage />} />
+              <Route path="/patio-lawn" element={<Patiolawn />} />
+              <Route path="/ballroom" element={<Ballroom />} />
+              <Route path="/lower-lounge" element={<Lowerlounge />} />
+              <Route path="/317-hl" element={<HL317 />} />
+              <Route path="/210-hl" element={<HL210 />} />
+              <Route path="/412-hl" element={<HL412 />} />
+            </Routes>
+          </main>
+        </div>
       </div>
-    </div>
-
-
-
-
   );
 }
 

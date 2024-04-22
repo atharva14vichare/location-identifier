@@ -9,6 +9,7 @@
   border-radius: 4px;
   overflow: hidden;
   background: #fff;
+  justify-content: space-between; /* Puts maximum space between children */
 }
 
 .card-image {
@@ -28,9 +29,23 @@
 .card-title {
   margin: 0 0 8px 0;
   font-size: 1.25rem;
+  text-decoration: none; /* Removes underline from links */
+  color: black; /* Set to your preferred text color */
 }
 
 .card-description {
   font-size: 1rem;
   color: #333;
+}
+
+/* This ensures that even if the title is a link, it doesn't get underlined */
+.card .card-title {
+  font-size: 1.25rem;
+  color: black; /* Set to your preferred text color */
+  text-decoration: none !important;
+}
+
+/* This ensures that any text inside the link does not get the underline */
+.card .card-link *, .card .card-link *:visited {
+  text-decoration: none !important;
 }

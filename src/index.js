@@ -25,11 +25,22 @@ import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 
-ReactDOM.render(
+import { createRoot } from 'react-dom/client'; // Correct import for React 18
+
+const container = document.getElementById('root');
+const root = createRoot(container); // createRoot now directly accepts the container
+
+
+//const root = ReactDOM.createRoot(document.getElementById('root')); // New root API
+root.render(
   <React.StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
+
+
+//<React.StrictMode>
+//</React.StrictMode>,
+//It was wrapping Browser router.
