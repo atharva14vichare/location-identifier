@@ -27,9 +27,13 @@ Before the development stage, I tried out paper protoyping (low fidelity prototy
 # CODE EXPLAINATION.
 
 1) App.js work as the home page of the website any changes such as sidebar, filter, hearders are to be made over here.
-2) Idex.js is just user host React server, hence can be ignored. 
+
+2) Index.js is just user host React server, hence can be ignored. 
+
 3) There are three major CSS Files present two for index styling( card.css and index.css) and one for styling the pages consisting rooms(RoomPage.css).
+
 4)Code for each room has been developed in individual javascript file. This can be replicated as per need. 
+
 5)All the commented where there is need to add and edit data. Eg Charts , Images, Descriptions etc.
 
 
