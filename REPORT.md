@@ -1,41 +1,38 @@
 # LOCATION APP IDENTIFIER
 
-This project was developed for Master's project, guided by Prof. Jacob Biehl and Andrew Xu. 
+This project was developed as a Master's project under the guidance of Professors Jacob Biehl and Andrew Xu.
 
-I was trying to impement a website which will help students find a room on campus. The Rooms are filtered based on two major criteria that are location(building) and amenities of the room. All rooms will be tagged with data such as location, occupancy, surround sensing restrictions etc.
+The goal was to implement a website to assist students in finding rooms on campus. The rooms are filtered based on two primary criteria: the building location and the room amenities. Each room is tagged with details such as location, occupancy, surrounding sensing restrictions, etc.
 
 
 # README
 
 1) Install Node.js on the workstation.
 2) Clone the code from the repository shared. 
-3) Direct to the folder and run following command:
+3) Navigate to the folder and run the following commands::
     a) npm install (downloads out all needed dependencies)
     b) npm start (starts a web server on localhost 3000)
 
 # DESIGN PROTOTYPING
 
-Before the development stage, I tried out paper protoyping (low fidelity prototyping) to understand the functional view. Further I also developed three different website layouts prototypes on Figma. A description about each design layout.
+Before the development stage, I explored paper prototyping (low fidelity prototyping) to understand the functional view of the project. Additionally, I developed three different website layout prototypes using Figma, each with a unique design approach:
 
-1) First layout gave optionn to search rooms by their locations. And all the rooms were just listed once you select out a particular location/building.
+1) The first layout provided an option to search for rooms by their locations. Once a specific location or building was selected, all available rooms were listed.
 
-2) Second layout gave a filter for all the amenties and location to select from. And the list of rooms get updated with respect to the options you choose.
+2) The second layout included filters for both amenities and locations. The list of rooms would update according to the options selected.
 
-3) Third layout is a merged version of the first two layouts. It first ives out an option to choose a particular location, and then gives out filter for the amenties available in the rooms.
-
+3)The third layout combined elements of the first two. It initially offered an option to choose a specific location, followed by filters for the amenities available in the rooms.
 
 # CODE EXPLAINATION.
+1)App.js serves as the home page of the website. Any changes to the sidebar, filters, or headers should be made here.
 
-1) App.js work as the home page of the website any changes such as sidebar, filter, hearders are to be made over here.
+2)Index.js hosts the React server and can be ignored.
 
-2) Index.js is just user host React server, hence can be ignored. 
+3)There are three major CSS files: two for index styling (card.css and index.css) and one for styling the pages that display rooms (RoomPage.css).
 
-3) There are three major CSS Files present two for index styling( card.css and index.css) and one for styling the pages consisting rooms(RoomPage.css).
+4)The code for each room is developed in individual JavaScript files. These can be replicated as needed.
 
-4)Code for each room has been developed in individual javascript file. This can be replicated as per need. 
-
-5)All the commented where there is need to add and edit data. Eg Charts , Images, Descriptions etc.
-
+5)Comments are added where there is a need to include or edit data, such as charts, images, descriptions, etc.
 
 
 
@@ -44,7 +41,8 @@ Before the development stage, I tried out paper protoyping (low fidelity prototy
 
 
 
-For Doubts you can contact
+
+Author
 Atharva Vichare
 MS Computer Science
 aav38@pitt.edu
